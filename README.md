@@ -52,7 +52,7 @@ The expected completion is August 05, 2024.
 
 ## License
 
-This project is part of an academic curriculum and is not licensed for commercial use. Sokla Lor - Bunheng Leng
+KingHotel is open source software licensed under the MIT License.
 
 ---
 
