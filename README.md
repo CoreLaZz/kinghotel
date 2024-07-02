@@ -54,6 +54,14 @@ The expected completion is August 05, 2024.
 
 KingHotel is open source software licensed under the MIT License.
 
+This means that:
+
+- The software is provided "as is", without warranty of any kind.
+- Anyone is free to use, modify, distribute, and sell the software.
+- The only requirement is that the original copyright and license notice must be included with the software.
+
+For more details, see the [LICENSE](LICENSE) file in the project repository.
+
 ---
 
 For more information, please contact Sokla Lor at [soklalor007@gmail.com].
