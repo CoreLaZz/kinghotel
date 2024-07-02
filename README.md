@@ -162,8 +162,7 @@ lib/
 │   ├── app_localizations_delegate.dart         // Custom LocalizationsDelegate
 │   └── language/
 │       ├── en.json                             // English translations
-│       ├── es.json                             // Spanish translations
-│       └── fr.json                             // French translations
+│       └── kh.json                             // French translations
 └── main.dart                                   // App entry point, runApp() call
 
 ```
