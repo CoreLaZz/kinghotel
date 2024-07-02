@@ -35,43 +35,57 @@ The primary purposes of the KingHotel app are:
 
 ## Team
 
-- **Sokla Lor (CoreLaZz)** - Project Lead & Main Developer
+- **Sokla Lor (CoreLaZz)**
+- **Bunheng Leng (Dustin)**
+- **Lyheng Long (Lyporkven)**
+- **E Ek**
+
+## Team Responsible
+
+- **Sokla Lor (CoreLaZz)** - Developer
+- **Bunheng Leng (Dustin)** - Developer
 
 ## Project Status
 
-This project is currently in development. The expected completion date is August 02, 2024.
+This project is started in August 02, 2024.
+The expected completion is August 05, 2024.
 
 ## License
 
-This project is part of an academic curriculum and is not licensed for commercial use.
+This project is part of an academic curriculum and is not licensed for commercial use. Sokla Lor - Bunheng Leng
 
 ---
 
 For more information, please contact Sokla Lor at [soklalor007@example.com].
 
+## Our Project Struture
+
+This Project Struture base on professional folder struture looking clean and easy to manage.
+
 ```text
+
 lib/
 ├── core/
 │   ├── constants/
-│   │   ├── api_constants.dart        // API endpoints, keys, timeouts
-│   │   ├── app_constants.dart        // App-wide constants like dimensions, durations
-│   │   └── asset_constants.dart      // Paths to images, fonts, etc.
+│   │   ├── api_constants.dart                  // API endpoints, keys, timeouts
+│   │   ├── app_constants.dart                  // App-wide constants like dimensions, durations
+│   │   └── asset_constants.dart                // Paths to images, fonts, etc.
 │   ├── errors/
-│   │   ├── exceptions.dart           // Custom exception classes
-│   │   ├── failures.dart             // Failure classes for domain layer
-│   │   └── error_handler.dart        // Centralized error handling logic
+│   │   ├── exceptions.dart                     // Custom exception classes
+│   │   ├── failures.dart                       // Failure classes for domain layer
+│   │   └── error_handler.dart                  // Centralized error handling logic
 │   ├── utils/
-│   │   ├── input_validator.dart      // Input validation functions
-│   │   ├── date_formatter.dart       // Date formatting utilities
-│   │   ├── string_extensions.dart    // Extension methods for String
-│   │   └── network_info.dart         // Network connectivity checker
+│   │   ├── input_validator.dart                // Input validation functions
+│   │   ├── date_formatter.dart                 // Date formatting utilities
+│   │   ├── string_extensions.dart              // Extension methods for String
+│   │   └── network_info.dart                   // Network connectivity checker
 │   ├── themes/
-│   │   ├── app_themes.dart           // Theme data for light/dark modes
-│   │   ├── text_styles.dart          // Reusable text styles
-│   │   └── color_palette.dart        // App color definitions
+│   │   ├── app_themes.dart                     // Theme data for light/dark modes
+│   │   ├── text_styles.dart                    // Reusable text styles
+│   │   └── color_palette.dart                  // App color definitions
 │   └── network/
-│       ├── network_client.dart       // Base network client (e.g., Dio configuration)
-│       └── api_endpoints.dart        // Enum or class defining API endpoints
+│       ├── network_client.dart                 // Base network client (e.g., Dio configuration)
+│       └── api_endpoints.dart                  // Enum or class defining API endpoints
 ├── data/
 │   ├── datasources/
 │   │   ├── local/
@@ -83,69 +97,70 @@ lib/
 │   │       ├── user_remote_datasource.dart     // User-related API calls
 │   │       └── product_remote_datasource.dart  // Product-related API calls
 │   ├── models/
-│   │   ├── user_model.dart           // Data models that implement entities
-│   │   ├── product_model.dart        // Product data model
+│   │   ├── user_model.dart                     // Data models that implement entities
+│   │   ├── product_model.dart                  // Product data model
 │   │   └── response/
-│   │       ├── api_response.dart     // Generic API response model
-│   │       └── error_response.dart   // Error response model
+│   │       ├── api_response.dart               // Generic API response model
+│   │       └── error_response.dart             // Error response model
 │   └── repositories/
-│       ├── user_repository_impl.dart    // Implementation of user repository
-│       └── product_repository_impl.dart // Implementation of product repository
+│       ├── user_repository_impl.dart           // Implementation of user repository
+│       └── product_repository_impl.dart        // Implementation of product repository
 ├── domain/
 │   ├── entities/
-│   │   ├── user.dart                 // User entity
-│   │   └── product.dart              // Product entity
+│   │   ├── user.dart                           // User entity
+│   │   └── product.dart                        // Product entity
 │   ├── repositories/
-│   │   ├── user_repository.dart      // User repository contract
-│   │   └── product_repository.dart   // Product repository contract
+│   │   ├── user_repository.dart                // User repository contract
+│   │   └── product_repository.dart             // Product repository contract
 │   └── usecases/
 │       ├── user/
-│       │   ├── get_user.dart         // Use case for retrieving user data
-│       │   ├── update_user.dart      // Use case for updating user data
-│       │   └── delete_user.dart      // Use case for deleting user
+│       │   ├── get_user.dart                   // Use case for retrieving user data
+│       │   ├── update_user.dart                // Use case for updating user data
+│       │   └── delete_user.dart                // Use case for deleting user
 │       └── product/
-│           ├── get_products.dart     // Use case for fetching products
-│           └── add_product.dart      // Use case for adding a new product
+│           ├── get_products.dart               // Use case for fetching products
+│           └── add_product.dart                // Use case for adding a new product
 ├── presentation/
 │   ├── blocs/
 │   │   ├── auth/
-│   │   │   ├── auth_bloc.dart        // Authentication business logic
-│   │   │   ├── auth_event.dart       // Auth events
-│   │   │   └── auth_state.dart       // Auth states
+│   │   │   ├── auth_bloc.dart                  // Authentication business logic
+│   │   │   ├── auth_event.dart                 // Auth events
+│   │   │   └── auth_state.dart                 // Auth states
 │   │   └── product/
-│   │       ├── product_bloc.dart     // Product-related business logic
-│   │       ├── product_event.dart    // Product events
-│   │       └── product_state.dart    // Product states
+│   │       ├── product_bloc.dart               // Product-related business logic
+│   │       ├── product_event.dart              // Product events
+│   │       └── product_state.dart              // Product states
 │   ├── pages/
 │   │   ├── home/
-│   │   │   ├── home_page.dart        // Home screen widget
-│   │   │   └── widgets/              // Home-specific widgets
+│   │   │   ├── home_page.dart                  // Home screen widget
+│   │   │   └── widgets/                        // Home-specific widgets
 │   │   ├── profile/
-│   │   │   ├── profile_page.dart     // Profile screen widget
-│   │   │   └── widgets/              // Profile-specific widgets
+│   │   │   ├── profile_page.dart               // Profile screen widget
+│   │   │   └── widgets/                        // Profile-specific widgets
 │   │   └── product/
-│   │       ├── product_list_page.dart  // Product list screen
-│   │       └── product_detail_page.dart // Product detail screen
+│   │       ├── product_list_page.dart          // Product list screen
+│   │       └── product_detail_page.dart        // Product detail screen
 │   └── widgets/
-│       ├── custom_button.dart        // Reusable custom button widget
-│       ├── user_avatar.dart          // User avatar display widget
-│       ├── loading_indicator.dart    // Custom loading indicator
-│       └── error_dialog.dart         // Reusable error dialog
+│       ├── custom_button.dart                  // Reusable custom button widget
+│       ├── user_avatar.dart                    // User avatar display widget
+│       ├── loading_indicator.dart              // Custom loading indicator
+│       └── error_dialog.dart                   // Reusable error dialog
 ├── config/
-│   ├── routes.dart                   // App route definitions
-│   ├── dependency_injection.dart     // Dependency injection setup (e.g., using get_it)
-│   └── app_config.dart               // Environment-specific configurations
+│   ├── routes.dart                             // App route definitions
+│   ├── dependency_injection.dart               // Dependency injection setup (e.g., using get_it)
+│   └── app_config.dart                         // Environment-specific configurations
 ├── localization/
-│   ├── app_localizations.dart        // Localization delegate and helper methods
-│   ├── app_localizations_delegate.dart  // Custom LocalizationsDelegate
+│   ├── app_localizations.dart                  // Localization delegate and helper methods
+│   ├── app_localizations_delegate.dart         // Custom LocalizationsDelegate
 │   └── language/
-│       ├── en.json                   // English translations
-│       ├── es.json                   // Spanish translations
-│       └── fr.json                   // French translations
-└── main.dart                         // App entry point, runApp() call
+│       ├── en.json                             // English translations
+│       ├── es.json                             // Spanish translations
+│       └── fr.json                             // French translations
+└── main.dart                                   // App entry point, runApp() call
+
 ```
 
-Additional details:
+### Additional details
 
 1. `core/network/`: Contains base networking setup, which can be used across the app.
 
