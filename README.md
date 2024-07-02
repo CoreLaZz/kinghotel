@@ -1,7 +1,53 @@
-# kinghotel
+# KingHotel
 
- KingHotel Flutter Year 3 Semester 2 Soka Lor Beltei International University Campus 2 2024 August 02
-Certainly. I'll provide an even more detailed breakdown of the structure, including explanations for additional files and subdirectories:
+KingHotel is a Flutter-based mobile application developed as part of the Year 3 Semester 2 curriculum at Beltei International University, Campus 2.
+This project is scheduled for completion on August 02, 2024.
+
+## Vision
+
+KingHotel aims to revolutionize the hotel booking experience by providing a seamless, user-friendly platform that connects travelers with a wide range of accommodations.
+Our vision is to become the go-to app for hotel reservations, offering personalized recommendations and exceptional customer service.
+
+## Purpose
+
+The primary purposes of the KingHotel app are:
+
+1. To simplify the hotel booking process for travelers worldwide
+2. To provide a platform for hotels to showcase their offerings and reach a broader audience
+3. To implement and demonstrate advanced Flutter development techniques learned during the course
+4. To create a scalable and maintainable codebase that can serve as a foundation for future enhancements
+
+## Key Features
+
+- User-friendly interface for browsing and booking hotels
+- Advanced search and filtering options
+- Secure payment integration
+- User profiles with booking history and preferences
+- Real-time notifications for bookings and promotions
+- Multi-language support for a global user base
+
+## Technology Stack
+
+- Flutter for cross-platform mobile development
+- Firebase for backend services and authentication
+- RESTful APIs for hotel data integration
+- Git for version control
+
+## Team
+
+- **Sokla Lor (CoreLaZz)** - Project Lead & Main Developer
+
+## Project Status
+
+This project is currently in development. The expected completion date is August 02, 2024.
+
+## License
+
+This project is part of an academic curriculum and is not licensed for commercial use.
+
+---
+
+For more information, please contact Sokla Lor at [soklalor007@example.com].
 
 ```text
 lib/
