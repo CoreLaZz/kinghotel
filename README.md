@@ -56,7 +56,7 @@ This project is part of an academic curriculum and is not licensed for commercia
 
 ---
 
-For more information, please contact Sokla Lor at [soklalor007@example.com].
+For more information, please contact Sokla Lor at [soklalor007@gmail.com].
 
 ## Our Project Struture
 
