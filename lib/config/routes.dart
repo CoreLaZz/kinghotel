@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:kinghotel/src/app/home.dart';
-import 'package:kinghotel/src/app/notification.dart';
-import 'package:kinghotel/src/app/profile.dart';
-import 'package:kinghotel/src/app/search.dart';
-import 'package:kinghotel/src/app/setting.dart';
+import 'package:kinghotel/presentations/pages/cart/cart.dart';
+import 'package:kinghotel/presentations/pages/home/home.dart';
+import 'package:kinghotel/presentations/pages/product/product.dart';
+import 'package:kinghotel/presentations/pages/profile/profile.dart';
+import 'package:kinghotel/presentations/widgets/bottom_navbar.dart';
 
 class AppRoutes {
   static const String home = '/home';
-  static const String search = '/search';
-  static const String notifications = '/notifications';
+  static const String product = '/product';
+  static const String cart = '/cart';
   static const String profile = '/profile';
-  static const String setting = '/setting';
 
-  static Map<String, WidgetBuilder> get routes => {
-    home: (context) => const HomePage(),
-    search: (context) => const SearchPage(),
-    notifications: (context) => const NotificationsPage(),
-    profile: (context) => const ProfilePage(),
-    setting: (context) => const SettingPage(),
+  static final Map<String, WidgetBuilder> routes = {
+    home: (context) => BottomNavBarPage(selectedIndex: 0, title: 'Home', child: HomeScreen()),
+    product: (context) => BottomNavBarPage(selectedIndex: 1, title: 'Product', child: ProductScreen()),
+    cart: (context) => BottomNavBarPage(selectedIndex: 2, title: 'Cart', child: CartScreen()),
+    profile: (context) => BottomNavBarPage(selectedIndex: 3, title: 'Profile', child: ProfileScreen()),
   };
 }

@@ -1,7 +1,8 @@
-// lib/main.dart
-
 import 'package:flutter/material.dart';
 import 'package:kinghotel/config/routes.dart';
+import 'package:kinghotel/presentations/pages/home/home.dart';
+import 'package:kinghotel/presentations/pages/loading/loading_screen.dart';
+import 'package:kinghotel/presentations/widgets/bottom_navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      initialRoute: AppRoutes.home,
-      routes: AppRoutes.routes,
+      home: const LoadingScreen(), // Show loading screen initially
+      routes: {
+        AppRoutes.home: (context) => BottomNavBarPage(selectedIndex: 0, title: '', child: HomeScreen()), // Default route to BottomNavBarPage
+        ...AppRoutes.routes, // Other routes defined in AppRoutes
+      },
     );
   }
 }
