@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:kinghotel/presentations/pages/home/home.dart';
-import 'package:kinghotel/presentations/widgets/bottom_navbar.dart';
+import 'package:kinghotel/presentations/pages/home/home_screen.dart';
+import 'package:kinghotel/presentations/widgets/bottom_navbar_screen.dart';
 
 class OnboardingSlider extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kinghotel/config/routes.dart';
-import 'package:kinghotel/presentations/pages/home/home.dart';
+import 'package:kinghotel/presentations/pages/home/home_screen.dart';
 import 'package:kinghotel/presentations/pages/loading/loading_screen.dart';
-import 'package:kinghotel/presentations/widgets/bottom_navbar.dart';
+import 'package:kinghotel/presentations/widgets/bottom_navbar_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:kinghotel/presentations/pages/loading/slider_screen.dart';
-import 'package:kinghotel/presentations/pages/loading/slider_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoadingScreen extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kinghotel/presentations/pages/cart/cart.dart';
-import 'package:kinghotel/presentations/pages/home/home.dart';
-import 'package:kinghotel/presentations/pages/product/product.dart';
-import 'package:kinghotel/presentations/pages/profile/profile.dart';
+import 'package:kinghotel/presentations/pages/cart/cart_screen.dart';
+import 'package:kinghotel/presentations/pages/home/home_screen.dart';
+import 'package:kinghotel/presentations/pages/product/product_screen.dart';
+import 'package:kinghotel/presentations/pages/profile/profile_screen.dart';
 
 class BottomNavBarPage extends StatefulWidget {
   final int selectedIndex;
