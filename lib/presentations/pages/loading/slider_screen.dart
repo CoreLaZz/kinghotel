@@ -1,5 +1,9 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'package:kinghotel/config/service.dart';
+import 'package:kinghotel/data/models/slide_item_model.dart';
 import 'package:kinghotel/presentations/pages/home/home_screen.dart';
 import 'package:kinghotel/presentations/widgets/bottom_navbar_screen.dart';
 
@@ -12,28 +16,12 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
   Timer? _timer;
-
-  final List<SliderItem> _sliderItems = [
-    SliderItem(
-      title: "Feature & Service",
-      description: "Frequently featured videos are videos that you watch, like, and share frequently",
-      image: "assets/images/feature_service.jpg",
-    ),
-    SliderItem(
-      title: "Beach & Restaurant",
-      description: "Frequently featured videos are videos that you watch, like, and share frequently",
-      image: "assets/images/beach_restaurant.jpg",
-    ),
-    SliderItem(
-      title: "Hotel & Resort",
-      description: "Frequently featured videos are videos that you watch, like, and share frequently",
-      image: "assets/images/hotel_resort.jpg",
-    ),
-  ];
+  List<SliderItem> _sliderItems = [];
 
   @override
   void initState() {
     super.initState();
+    _fetchSlides();
     _startAutoSlide();
   }
 
@@ -42,6 +30,24 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
     _timer?.cancel();
     _pageController.dispose();
     super.dispose();
+  }
+
+  Future<void> _fetchSlides() async {
+    try {
+      final response =
+          await http.get(Uri.parse('http://localhost:3000/slides'));
+      if (response.statusCode == 200) {
+        List<dynamic> jsonList = json.decode(response.body);
+        setState(() {
+          _sliderItems =
+              jsonList.map((json) => SliderItem.fromJson(json)).toList();
+        });
+      } else {
+        print('Failed to load slides with status: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Error fetching slides: $e');
+    }
   }
 
   void _startAutoSlide() {
@@ -73,18 +79,21 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
               ),
             ),
             Expanded(
-              child: PageView.builder(
-                controller: _pageController,
-                itemCount: _sliderItems.length,
-                onPageChanged: (int page) {
-                  setState(() {
-                    _currentPage = page;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  return SliderPage(item: _sliderItems[index]);
-                },
-              ),
+              child: _sliderItems.isEmpty
+                  ? Center(
+                      child: CircularProgressIndicator()) // Loading indicator
+                  : PageView.builder(
+                      controller: _pageController,
+                      itemCount: _sliderItems.length,
+                      onPageChanged: (int page) {
+                        setState(() {
+                          _currentPage = page;
+                        });
+                      },
+                      itemBuilder: (context, index) {
+                        return SliderPage(item: _sliderItems[index]);
+                      },
+                    ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -94,8 +103,8 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     child: Text(
-                      "Get Started",
-                      style: TextStyle(fontSize: 20,color: Colors.white),
+                      "Get Start",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                   onPressed: () {
@@ -145,14 +154,6 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
   }
 }
 
-class SliderItem {
-  final String title;
-  final String description;
-  final String image;
-
-  SliderItem({required this.title, required this.description, required this.image});
-}
-
 class SliderPage extends StatelessWidget {
   final SliderItem item;
 
@@ -182,7 +183,7 @@ class SliderPage extends StatelessWidget {
           SizedBox(height: 16),
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: Image.asset(
+            child: Image.network(
               item.image,
               fit: BoxFit.cover,
               height: 600,

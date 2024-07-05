@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kinghotel/config/routes.dart';
+// import 'package:kinghotel/config/service.dart';
 import 'package:kinghotel/presentations/pages/home/home_screen.dart';
 import 'package:kinghotel/presentations/pages/loading/loading_screen.dart';
 import 'package:kinghotel/presentations/widgets/bottom_navbar_screen.dart';
 
-void main() {
+Future<void> main() async {
+  // await Env.loadEnv();
   runApp(const MyApp());
 }
 
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily:  GoogleFonts.poppins().fontFamily,
         primarySwatch: Colors.red,
       ),
       home: const LoadingScreen(), // Show loading screen initially

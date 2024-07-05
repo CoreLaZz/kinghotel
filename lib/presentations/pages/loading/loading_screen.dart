@@ -19,7 +19,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   _navigateToOnboarding() async {
-    await Future.delayed(Duration(seconds: 0)); // Wait for 3 seconds
+    await Future.delayed(Duration(seconds: 3)); // Wait for 3 seconds
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => OnboardingSlider()),
