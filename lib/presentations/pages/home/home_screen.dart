@@ -29,12 +29,12 @@ class HomePage extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search',
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.search_rounded,
             color: Colors.grey,
           ),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey), // Outline color
+            borderSide: const BorderSide(color: Colors.grey), // Outline color
             borderRadius: BorderRadius.circular(15),
           ),
           enabledBorder: OutlineInputBorder(
@@ -43,13 +43,13 @@ class HomePage extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: Colors.grey), // Outline color when focused
+            borderSide: const BorderSide(
+                color: Colors.grey), // Outline color when focused
             borderRadius: BorderRadius.circular(15),
           ),
           filled: true,
           fillColor: Colors.white, // Color inside the text field
-          contentPadding: EdgeInsets.symmetric(vertical: 14),
+          contentPadding: const EdgeInsets.symmetric(vertical: 14),
         ),
       ),
     );
@@ -57,8 +57,8 @@ class HomePage extends StatelessWidget {
 
   Widget _buildPromoBanner() {
     return Container(
-      margin: EdgeInsets.all(16),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -70,30 +70,30 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Enjoy 50% Off',
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          Text(
+          const Text(
             'up to \$399',
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: const TextStyle(color: Colors.white, fontSize: 18),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor:
-                  Color(0xFF1D2B4A), // Set the background color here
+                  const Color(0xFF1D2B4A), // Set the background color here
               shape: RoundedRectangleBorder(
                 borderRadius:
                     BorderRadius.circular(5), // Optional: Round the edges
               ),
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                   vertical: 16.0, horizontal: 24.5), // Optional: Adjust padding
             ),
-            child: Text(
+            child: const Text(
               'Continue',
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
             onPressed: () {
               // Navigate to HomeScreen when Continue is pressed
@@ -109,18 +109,18 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildAddressSection() {
-    return Padding(
+    return const Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Row(
+      child: const Row(
         children: [
-          Icon(Icons.location_on, color: Colors.blue),
-          SizedBox(width: 10),
-          Column(
+          const Icon(Icons.location_on, color: Colors.blue),
+          const SizedBox(width: 10),
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Check our Address'),
-              Text('Kompot, 109 187 198, Cambodia',
-                  style: TextStyle(color: Colors.grey)),
+              const Text('Check our Address'),
+              const Text('Kompot, 109 187 198, Cambodia',
+                  style: const TextStyle(color: Colors.grey)),
             ],
           ),
         ],
@@ -136,10 +136,11 @@ class HomePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Popular Items',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('Popular Items',
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold)),
               TextButton(
-                child: Text('See all'),
+                child: const Text('See all'),
                 onPressed: () {
                   // Navigate to HomeScreen when See all is pressed
                   Navigator.push(
@@ -157,8 +158,8 @@ class HomePage extends StatelessWidget {
         ),
         GridView.builder(
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.8,
           ),
@@ -184,7 +185,7 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -218,11 +219,11 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(color: Colors.grey.shade500),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.symmetric(vertical: 3.0),
-                  child: Text(
+                  child: const Text(
                     '\$24.00/night',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
               ],

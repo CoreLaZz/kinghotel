@@ -1,13 +1,12 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:kinghotel/presentations/pages/home/home_screen.dart';
 import 'package:kinghotel/presentations/pages/product/product_screen.dart';
 import 'package:kinghotel/presentations/widgets/bottom_navbar_screen.dart';
 
 class CartPage extends StatelessWidget {
+  const CartPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +66,9 @@ class CartPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Wood Resort',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -78,9 +77,9 @@ class CartPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         '\$196',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -88,7 +87,7 @@ class CartPage extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF1D2B4A),
+                            backgroundColor: const Color(0xFF1D2B4A),
                             padding: const EdgeInsets.symmetric(
                               horizontal: 20,
                               vertical: 10,
@@ -118,17 +117,17 @@ Widget _buildReport() {
     padding: const EdgeInsets.all(16),
     child: Column(
       children: [
-        SizedBox(height: 32.0),
-        TextField(
+        const SizedBox(height: 32.0),
+        const TextField(
           decoration: InputDecoration(
             hintText: 'Enter your promo code',
             prefixIcon: Icon(Icons.airplane_ticket_rounded),
             suffixIcon: Icon(Icons.arrow_forward),
           ),
         ),
-        SizedBox(height: 32.0),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        const SizedBox(height: 32.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               Row(
@@ -188,21 +187,14 @@ Widget _buildReport() {
             ],
           ),
         ),
-        SizedBox(height: 32.0),
+        const SizedBox(height: 32.0),
         Padding(
           padding: const EdgeInsets.all(0.0),
           child: SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: Text(
-                  "View More",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF1D2B4A),
+                backgroundColor: const Color(0xFF1D2B4A),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -215,6 +207,13 @@ Widget _buildReport() {
                           selectedIndex: 1, title: '', child: ProductScreen())),
                 );
               },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Text(
+                  "View More",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
             ),
           ),
         ),
@@ -224,12 +223,14 @@ Widget _buildReport() {
 }
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Booking View'),
+          title: const Text('Booking View'),
         ),
-        body: CartPage());
+        body: const CartPage());
   }
 }

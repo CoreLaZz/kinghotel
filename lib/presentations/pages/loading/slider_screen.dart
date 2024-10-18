@@ -51,7 +51,7 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
   }
 
   void _startAutoSlide() {
-    _timer = Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
       if (_currentPage < _sliderItems.length - 1) {
         _currentPage++;
       } else {
@@ -59,7 +59,7 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
       }
       _pageController.animateToPage(
         _currentPage,
-        duration: Duration(milliseconds: 350),
+        duration: const Duration(milliseconds: 350),
         curve: Curves.easeIn,
       );
     });
@@ -80,8 +80,8 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
             ),
             Expanded(
               child: _sliderItems.isEmpty
-                  ? Center(
-                      child: CircularProgressIndicator()) // Loading indicator
+                  ? const Center(
+                      child: const CircularProgressIndicator()) // Loading indicator
                   : PageView.builder(
                       controller: _pageController,
                       itemCount: _sliderItems.length,
@@ -100,13 +100,6 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: Text(
-                      "Get Start",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
@@ -119,9 +112,16 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF1D2B4A),
+                    backgroundColor: const Color(0xFF1D2B4A),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: const Text(
+                      "Get Start",
+                      style: const TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ),
@@ -143,11 +143,11 @@ class _OnboardingSliderState extends State<OnboardingSlider> {
 
   Widget _indicator(bool isActive) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4.0),
+      margin: const EdgeInsets.symmetric(horizontal: 4.0),
       height: 8.0,
       width: isActive ? 50 : 25,
       decoration: BoxDecoration(
-        color: isActive ? Color(0xFF1D2B4A) : Colors.grey,
+        color: isActive ? const Color(0xFF1D2B4A) : Colors.grey,
         borderRadius: BorderRadius.circular(4),
       ),
     );
@@ -166,21 +166,21 @@ class SliderPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Explore more",
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             item.title,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             item.description,
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Image.network(
